@@ -1,2 +1,2 @@
-# WP-theme-for-my-Blog
+# WP initial theme
 Wordpress custom theme for my Blog
