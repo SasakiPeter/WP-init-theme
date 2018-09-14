@@ -8,10 +8,8 @@
         the_archive_description( '<section>', '</section>' );
         ?>
     </header>
-    <!-- .page-header -->
-    <div class="is-posts-container">
+    <div>
         <?php
-        // Start the loop.
         while ( have_posts() ) :
             the_post();
         ?>

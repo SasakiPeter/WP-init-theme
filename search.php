@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <?php if ( have_posts() ) : ?>
-<header class="is-content-header">
+<header>
     <h2>検索結果：<?= esc_html( get_search_query()) ?> </h2>
-</header><!-- .page-header -->
+</header>
 
-<section class="is-posts-container" >
+<section>
 <?php
 while ( have_posts() ) {
     the_post();

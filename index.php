@@ -1,7 +1,7 @@
 <!-- Get header -->
 <?php get_header(); ?>
 
-<div class="main col-12 col-md-9">
+<div class="main col-12 col-lg-9">
     <section class="index">
         <!-- posts -->
         <div class="index-posts is-posts-container">
@@ -23,7 +23,7 @@
     </section>
 </div> <!-- col-9 -->
 
-<div class="sidebar  col-12 col-md-3 mt-3 mb-3 px-2">
+<div class="sidebar  col-12 col-lg-3">
     <?php get_sidebar(); ?>
 </div>
 

@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
     <title>blog</title>
 </head>
-<body>
+<body class="bg-info">
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="<?= home_url();?>">
                 <h1 class="header__title"><?php bloginfo( 'name' ); ?></h1>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

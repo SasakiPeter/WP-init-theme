@@ -9,7 +9,7 @@ wp_enqueue_script(
     get_template_directory_uri() . '/js/main.js', // ソース
     array( 'jquery' ), // 先に読み込まれているべきScript（ハンドル名） 
     filemtime( get_template_directory() . '/js/main.js' ), // バージョン情報 
-    true // Bodyタグの最後でロードしますか？
+    true // Bodyタグの最後でロードするか？
 );
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
@@ -84,7 +84,7 @@ function pagination($pages = '', $range = 1){
    
     /* ページ数が1じゃなければ */
     if(1 != $pages){
-        echo '<nav aria-label="Posts pages"> <ul class="pagination">';
+        echo '<nav class="pagination-wrapper" aria-label="Posts pages"> <ul class="pagination">';
     }
     /* 1番最初のページに戻るボタン */
     if($paged > 2 && $paged > $range+1 && $showitems < $pages){
@@ -128,72 +128,3 @@ function pagination($pages = '', $range = 1){
    
     echo "</ul></nav>";
 }
-
-
-class pages extends WP_Widget{
-
-    // constructor
-    function pages(){
-        parent::WP_Widget(
-            false,
-            $name = "pages",
-            array("description"=>"ページ一覧表示",)
-        );
-    }
-
-    // 管理画面の設定や、表示用コードを記述する
-    function form($instance){
-        ?>
-        <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
-            <input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>">
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id('limit'); ?>"><?php _e('表示する投稿数:'); ?></label>
-            <input type="text" id="<?php echo $this->get_field_id('limit'); ?>" name="<?php echo $this->get_field_name('limit'); ?>" value="<?php echo esc_attr( $instance['limit'] ); ?>" size="3">
-        </p>
-    <?php
-    }
-
-    // 管理画面で設定を変更した時の処理を書く
-    function update($new_instance, $old_instance){
-        $instance = $old_instance;
-        $instance['title'] = strip_tags($new_instance['title']);
-        $instance['limit'] = is_numeric($new_instance['limit']) ? $new_instance['limit'] : 5;
-        return $instance;
-    }
-
-    // ウィジェットを配置した時の表示用コードを書く←つまり、HTML？
-    function widget($args, $instance){
-        extract( $args );
- 
-        if($instance['title'] != ''){
-            $title = apply_filters('widget_title', $instance['title']);
-        }
-        echo $before_widget;
-        if( $title ){
-            echo $before_title . $title . $after_title;
-        }
-        ?>
-        <ul class="img-new-post clearfix">
-            <?php
-                query_posts("posts_per_page=".$instance['limit']);
-                if(have_posts()):
-                while(have_posts()): the_post();
-            ?>
-            <li>
-            <?php if( has_post_thumbnail() ): ?>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( array(400,400) ); ?></a>
-            <?php else: ?>
-            <a href="<?php the_permalink(); ?>"><img src="<?php bloginfo('template_url'); ?>/images/no-image.jpg" alt=""></a>
-            <?php endif; ?>
-            <div><p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br><span class="img-new-post-date"><?php echo get_the_date('Y/n/j'); ?></span></p></div>
-            </li>
-            <?php endwhile; endif; ?>
-        </ul>
-        <?php
-        echo $after_widget;
-    }
-}
-
-register_widget('pages');

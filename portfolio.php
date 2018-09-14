@@ -9,7 +9,6 @@ Template Name:Portfolio
 <?php get_header( ); ?>
 
 <?php
-    // Start the loop.
     while ( have_posts() ) :
         the_post();
 ?>
