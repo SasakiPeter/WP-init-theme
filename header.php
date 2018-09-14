@@ -46,5 +46,5 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <main class="container">
         <div class="row">

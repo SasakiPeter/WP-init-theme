@@ -1,5 +1,19 @@
 <?php
 
+/**
+ * Load scripts and style sheets
+ */
+function load_scripts(){ 
+wp_enqueue_script(
+    'main.js', // ハンドル名
+    get_template_directory_uri() . '/js/main.js', // ソース
+    array( 'jquery' ), // 先に読み込まれているべきScript（ハンドル名） 
+    filemtime( get_template_directory() . '/js/main.js' ), // バージョン情報 
+    true // Bodyタグの最後でロードしますか？
+);
+}
+add_action( 'wp_enqueue_scripts', 'load_scripts' );
+
 // Support To Post Thumbnail
 add_theme_support('post-thumbnails');
 

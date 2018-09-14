@@ -1,5 +1,5 @@
         </div> <!-- row -->
-    </div> <!-- container -->
+    </main> <!-- container -->
     <footer class="footer">
         <div>
             <a href="https://github.com/SasakiPeter">

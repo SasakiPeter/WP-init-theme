@@ -21,7 +21,12 @@ Template Name:Home
             <?php the_content() ?>
         </article>
     </section>
-    <section class="opening">
+    <!-- <div class="animation">
+        <span class="btn">Third
+        <span class="inner"></span>
+        </span>
+    </div> -->
+    <!-- <section class="opening">
         <div class="name">
             <div class="name__char">
                 <span class="char char-1">S</span>
@@ -66,7 +71,7 @@ Template Name:Home
                 <span class="char char-1">U</span>
             </div>
         </div>
-    </section>
+    </section> -->
 <?php endwhile?>
 
 <?php get_footer( );?>
