@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Nyan",
+        "path": "/images/thumbnail-default.jpg",
+        "active": true
+    },
+    {
+        "name": "Nyan",
+        "path": "/images/nyan.jpg"
+    },
+    {
+        "name": "Nyan",
+        "path": "/images/surprised-nyan.jpg"
+    },
+    {
+        "name": "Nyan",
+        "path": "/images/lying-nyan.jpg"
+    }
+]
