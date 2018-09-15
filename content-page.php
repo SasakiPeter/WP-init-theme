@@ -11,6 +11,7 @@
             ?>
         </div>
         <div class="col-7">
+            <!-- <span>
                 <?php the_category() ?>
             </span> -->
             

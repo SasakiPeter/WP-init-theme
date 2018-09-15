@@ -1,17 +1,23 @@
         </div> <!-- row -->
     </main> <!-- container -->
     <footer class="footer">
-        <div>
-            <a href="https://github.com/SasakiPeter">
-                <i class="fab fa-github fa-3x link__github"></i>
-            </a>
-            <a href="https://twitter.com/saishikisanchu">
-                <i class="fab fa-twitter-square fa-3x link__twitter"></i>
-            </a>
-            <a href="https://www.facebook.com/mstream.myk/">
-                <i class="fab fa-facebook fa-3x link__facebook"></i>
-            </a>
-        </div>
+        <ul class="footer__links">
+            <li>
+                <a href="https://github.com/SasakiPeter">
+                    <i class="fab fa-github fa-3x link link--github"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/saishikisanchu">
+                    <i class="fab fa-twitter-square fa-3x link link--twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/mstream.myk/">
+                    <i class="fab fa-facebook fa-3x link link--facebook"></i>
+                </a>
+            </li>
+        </ul>
         <span>
         Copyright © 2018 SasakiPeter All Rights Reserved.
         </span>

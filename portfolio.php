@@ -22,7 +22,7 @@ Template Name:Portfolio
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
-                    <?php 
+                    <?php
                         $path=get_bloginfo( 'stylesheet_directory' )."/slide.json";
                         // $path=get_stylesheet_directory_url()."/slide.json";
                         $images=json_decode(file_get_contents($path));

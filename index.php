@@ -6,22 +6,18 @@
         <!-- posts -->
         <div class="index-posts is-posts-container">
             <?php
-            // Start the loop the_post()はループの中でしか使えない
-            // このループ文はWPDB内の投稿を展開しているだけ
             while (have_posts()):
                 the_post();
             ?>
-            <!-- content-pageを呼んでいる -->
             <?php get_template_part("content","page"); ?>
             <?php endwhile;?>
         </div>
         <!-- paginaiton -->
         <?php if (function_exists("pagination")) {
             pagination($additional_loop->max_num_pages);
-        } ?>
-        
+        } ?> 
     </section>
-</div> <!-- col-9 -->
+</div> 
 
 <div class="sidebar  col-12 col-lg-3">
     <?php get_sidebar(); ?>

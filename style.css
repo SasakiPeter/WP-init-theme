@@ -170,11 +170,15 @@ ul li {
     align-items: center;
 }
 
-.link__twitter{
+.footer__links{
+    display: flex;
+}
+
+.link--twitter{
     color:#1DA1F2;
 }
 
-.link__facebook{
+.link--facebook{
     color:#4267B2;
 }
 
